@@ -7,7 +7,7 @@ export default function Home() {
       {session ? (
         <button onClick={() => signOut()}>signOut</button>
       ) : (
-        <button onClick={() => signIn()}>signIn</button>
+        <button onClick={() => signIn("github")}>signIn</button>
       )}
     </>
   );

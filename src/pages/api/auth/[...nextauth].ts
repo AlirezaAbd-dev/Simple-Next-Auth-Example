@@ -1,4 +1,4 @@
-import NextAuth from "next-auth";
+import NextAuth, { TokenSet } from "next-auth";
 import GithubProvider from "next-auth/providers/github";
 
 export const authOptions = {
@@ -11,12 +11,7 @@ export const authOptions = {
   callbacks: {
     async jwt({ token, account }: any) {
       if (account) {
-        console.log("token", token);
-        console.log("account", account);
-
         token.accessToken = account.access_token;
-
-        console.log("after", token);
       }
       return token;
     },
